@@ -48,7 +48,7 @@ None
 ```
 $ heroku config:set EMAIL=[...]
 $ heroku config:set ABOUT_ME=[...]
-$ heroku run rails db:create db:migrate
+$ heroku run rails db:migrate
 $ heroku run rails console
   Admin.create!({ email: '...', password: '...', password_confirmation: '...'  })
 ```
