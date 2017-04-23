@@ -46,11 +46,11 @@ None
 * Deployment instructions
 
 ```
-$ heroku config:set EMAIL=[...]
-$ heroku config:set ABOUT_ME=[...]
+$ heroku config:set EMAIL=<EMAIL>
+$ heroku config:set ABOUT_ME=<URL>
 $ heroku run rails db:migrate
 $ heroku run rails console
-  Admin.create!({ email: '...', password: '...', password_confirmation: '...'  })
+irb(main):001:0> Admin.create!({ email: '<EMAIL>', password: '<PASSWORD>', password_confirmation: '<PASSWORD>' })
 ```
 
 ---
