@@ -79,6 +79,6 @@ class WikisController < ApplicationController
     end
 
     def tag_cloud
-      @tags = Wiki.tag_counts_on(:tags)
+      @tags = Wiki.tag_counts_on(:tags).order('name')
     end
 end
