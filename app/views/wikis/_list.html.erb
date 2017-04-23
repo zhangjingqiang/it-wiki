@@ -1,0 +1,25 @@
+<% @wikis.each do |wiki| %>
+  <div class="blog-post">
+    <h3><%= wiki.title %></h3>
+    <%= auto_link wiki.link %>
+    <p><%= auto_link(simple_format(wiki.try(:description))) %></p>
+    <div class="callout">
+      <% wiki.tag_list.each do |tag| %>
+        <%= link_to tag_path(id: tag) do %>
+          <span class='label'>
+            <%= tag %>
+          </span>
+        <% end %>
+      <% end %>
+      <div class="top-bar-right">
+        <%= link_to 'Show', wiki %>
+        <% if admin_signed_in? %>
+          <%= link_to 'Edit', edit_wiki_path(wiki) %>
+          <%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= will_paginate @wikis, renderer: FoundationPagination::Rails %>

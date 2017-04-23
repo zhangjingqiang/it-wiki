@@ -1,0 +1,38 @@
+<div class="row" id="content" style="padding-top: 0.5cm;">
+  <div class="medium-6 columns" data-sticky-container>
+    <div class="card" style="width: 700px;">
+      <div class="card-divider">
+        Title
+      </div>
+      <div class="card-section">
+        <p><%= @wiki.title %></p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 700px;">
+      <div class="card-divider">
+        Description
+      </div>
+      <div class="card-section">
+        <p><%= auto_link(simple_format(@wiki.try(:description))) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="medium-4 columns" data-sticky-container>
+    <div class="card" style="width: 330px;">
+      <div class="card-divider">
+        Link
+      </div>
+      <div class="card-section">
+        <p><%= auto_link @wiki.link %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if admin_signed_in? %>
+  <%= link_to 'Edit', edit_wiki_path(@wiki), :class => 'button' %>
+  <%= link_to 'Destroy', @wiki, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' %>
+<% end %>
+<%= link_to t('.back', :default => t("helpers.links.back")), root_path, :class => 'button secondary'  %>

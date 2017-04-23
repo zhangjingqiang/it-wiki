@@ -1,0 +1,38 @@
+<%= form_for(wiki) do |f| %>
+  <% if wiki.errors.any? %>
+    <div class="alert callout" data-closable>
+      <h2><%= pluralize(wiki.errors.count, "error") %> prohibited this wiki from being saved:</h2>
+
+      <ul>
+        <% wiki.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tag_list %>
+    <%= f.text_field :tag_list %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'button' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), root_path, :class => 'button secondary' %>
+  </div>
+<% end %>

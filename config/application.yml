@@ -1,0 +1,11 @@
+defaults: &defaults
+  site_name: IT Wiki
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

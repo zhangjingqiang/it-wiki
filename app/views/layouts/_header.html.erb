@@ -1,0 +1,17 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text"><%= Settings.site_name %></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <% if admin_signed_in? %>
+        <li><%= link_to 'New Wiki', new_wiki_path %></li>
+        <li><%= link_to 'Logout', destroy_admin_session_path, :method=>'delete' %></li>
+      <% else %>
+        <li><%= link_to image_tag(avatar_url, :size => "20x20"), ENV['ABOUT_ME'] %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

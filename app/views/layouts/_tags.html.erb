@@ -1,0 +1,11 @@
+<div class="callout large primary">
+  <div class="row column text-center">
+    <% tag_cloud(@tags, %w(success alert secondary)) do |tag, css_class| %>
+      <%= link_to :action => :tag, :id => tag.name do %>
+        <span class='<%#= "#{css_class}" %> label'>
+          <%= tag.name %>
+        </span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
