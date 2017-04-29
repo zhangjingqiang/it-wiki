@@ -2,7 +2,7 @@
   <div class="blog-post">
     <h3><%= wiki.title %></h3>
     <%= auto_link wiki.link %>
-    <p><%= auto_link(simple_format(wiki.try(:description))) %></p>
+    <p><%= auto_link(simple_format(truncate(wiki.try(:description), length: 200))) %></p>
     <div class="callout">
       <% wiki.tag_list.each do |tag| %>
         <%= link_to tag_path(id: tag) do %>

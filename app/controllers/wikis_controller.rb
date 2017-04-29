@@ -2,6 +2,7 @@ class WikisController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show, :tag]
   before_action :set_wiki, only: [:show, :edit, :update, :destroy]
   before_action :tag_cloud, only: [:index, :tag]
+  before_action :layout_by_device
 
   # GET /wikis
   # GET /wikis.json
