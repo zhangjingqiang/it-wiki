@@ -11,19 +11,19 @@
 
     <div class="card">
       <div class="card-divider">
-        Description
+        Link
       </div>
       <div class="card-section">
-        <p><%= auto_link(simple_format(@wiki.try(:description))) %></p>
+        <p><%= auto_link @wiki.link %></p>
       </div>
     </div>
 
     <div class="card">
       <div class="card-divider">
-        Link
+        Description
       </div>
       <div class="card-section">
-        <p><%= auto_link @wiki.link %></p>
+        <p><%= auto_link(simple_format(@wiki.try(:description))) %></p>
       </div>
     </div>
 
