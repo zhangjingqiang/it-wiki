@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :tag_list %>
-    <%= f.text_field :tag_list %>
+    <%= f.text_field :tag_list, value: @wiki.tag_list.to_s %>
   </div>
 
   <div class="actions">
