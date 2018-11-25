@@ -52,9 +52,3 @@ $ heroku run rails db:migrate
 $ heroku run rails console
 irb(main):001:0> Admin.create!({ email: '<EMAIL>', password: '<PASSWORD>', password_confirmation: '<PASSWORD>' })
 ```
-
----
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
